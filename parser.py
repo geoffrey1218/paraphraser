@@ -18,4 +18,6 @@ def parse(filename):
 
     file.close()
 
+    print("dictionary loaded.")
+
     return ref
