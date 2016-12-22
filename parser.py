@@ -1,4 +1,3 @@
-
 # Takes a file name and reads the appropriate file into a dictionary
 # File lines should be structured "key,<csv value list>" for optimal structuring
 # input: filename - the name of the file to read in
