@@ -12,7 +12,7 @@ def parse(filename):
     for line in file:
         if line == "" or line == "\n":
             continue
-        words = line.split(',']
+        words = line.split(',')
         ref[words[0]] = words[1:]
 
     file.close()
