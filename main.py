@@ -1,14 +1,7 @@
 import user_input
 import synonym_parser
 
-dictionary_filename = "mobythes.aur"
-dictionary = []
-
-def init():
-    dictionary = synonym_parser.parse(dictionary_filename)
-
 def main():
-    init()
     running = True
     while running:
         original_msg = user_input.take_user_input()
