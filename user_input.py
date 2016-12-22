@@ -12,8 +12,3 @@ def replace_with_synonyms(input_list):
     
 def take_user_input():
     input_list = input("Enter a sentence to be paraphrased: ").split()
-    replace_with_synonyms(input_list)
-    print(*input_list, sep=' ')
-        
-if __name__ == "__main__":
-    take_user_input()
