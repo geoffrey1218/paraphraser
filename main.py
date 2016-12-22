@@ -15,5 +15,7 @@ def main():
         again = input("Another? ").lower()
         running = again == 'y' or again == "yes" or again == "si"
 
+init()
+
 if __name__ == "__main__":
     main()
