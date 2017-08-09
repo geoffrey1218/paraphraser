@@ -32,7 +32,8 @@ def is_replaceable_word(word):
 # output: list of words with input replaced by synonyms
 def replace_with_synonyms(input_list):
     global dictionary
-    dictionary = synonym_parser.parse(dictionary_filename)
+    if not dictionary:
+        dictionary = synonym_parser.parse(dictionary_filename)
     output_list = []
     for i in range(len(input_list)):
         if is_replaceable_word(input_list[i]):
