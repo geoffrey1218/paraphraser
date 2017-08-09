@@ -6,7 +6,7 @@ def main():
     while running:
         original_msg = user_input.take_user_input()
         new_msg = user_input.replace_with_synonyms(original_msg)
-        print(new_msg)
+        print(' '.join(str(x) for x in new_msg))
         again = input("Another? ").lower()
         running = again == 'y' or again == "yes" or again == "si"
 
