@@ -5,18 +5,33 @@ import synonym_parser
 # loaded from file, key is the root word and value is a list of synonyms
 dictionary = []
 dictionary_filename = "mobythes.aur"
+punctuation = ['.',',','!','?',';',':','-','(',')','[',']','/']
 
 # Gets a synonym for the given word from the given dict
 # input: word - the word you want a synonym for
 # output: synonym for the word
 def get_synonym(word):
-    # if word is key, i.e. we have synonyms for the word
+    before_punc = ''
+    if word[0] in punctuation:
+        before_punc = word[0]
+        word = word[1:]
+
+    after_punc = ''
+    if word[len(word) - 1] in punctuation:
+        after_punc = word[len(word) - 1]
+        word = word[:len(word) - 1]
+
+    capitalized = word[0].isupper()
     word = word.lower()
+
     if word in dictionary:
         synonyms = dictionary[word]
-        return random.choice(synonyms)
-    else:
-        return word
+        word = random.choice(synonyms)
+    
+    if capitalized:
+        word = word[0].upper() + word[1:]
+
+    return before_punc + word + after_punc
 
 # Determines if word should be replaced by a synonym
 # output: True if replaceable, False if not
